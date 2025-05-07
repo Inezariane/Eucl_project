@@ -1,4 +1,4 @@
-package com.eucl.user;
+package com.eucl.model;
 
 import java.util.Collection;
 import java.util.List;
@@ -27,6 +27,9 @@ public class User implements UserDetails {
 
     @Column(unique = true, nullable = false)
     private String phone;
+
+    @Column(unique = true, nullable = false)
+    private String nationalId;
     
     @Enumerated(EnumType.STRING)
 
@@ -73,6 +76,12 @@ public class User implements UserDetails {
     }
     public void setRole(Role role) {
         this.role = role;
+    }
+    public String getNationalId() {
+        return nationalId;
+    }
+    public void setNationalId(String nationalId) {
+        this.nationalId = nationalId;
     }
 
     @Override

@@ -2,7 +2,7 @@ package com.eucl.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.eucl.user.*;
+import com.eucl.model.*;
 
 import java.util.List;
 

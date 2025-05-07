@@ -2,8 +2,8 @@ package com.eucl.service;
 
 import org.springframework.stereotype.Service;
 
+import com.eucl.model.*;
 import com.eucl.repository.UserRepository;
-import com.eucl.user.*;
 
 import java.util.List;
 

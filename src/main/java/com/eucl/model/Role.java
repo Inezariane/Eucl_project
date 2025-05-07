@@ -1,4 +1,4 @@
-package com.eucl.user;
+package com.eucl.model;
 
 public enum Role {
     USER,

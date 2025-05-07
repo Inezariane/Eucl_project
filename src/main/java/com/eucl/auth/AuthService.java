@@ -2,9 +2,9 @@ package com.eucl.auth;
 
 import org.springframework.stereotype.Service;
 
+import com.eucl.model.*;
 import com.eucl.repository.UserRepository;
 import com.eucl.security.JwtService;
-import com.eucl.user.*;
 
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.password.PasswordEncoder;

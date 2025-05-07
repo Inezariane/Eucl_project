@@ -1,6 +1,6 @@
 package com.eucl.auth;
 
-import com.eucl.user.Role;
+import com.eucl.model.Role;
 public class RegisterRequest {
 
     private String name;

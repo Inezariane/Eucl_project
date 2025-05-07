@@ -3,8 +3,8 @@ package com.eucl.controller;
 import java.util.List;
 import org.springframework.web.bind.annotation.*;
 
+import com.eucl.model.*;
 import com.eucl.service.UserService;
-import com.eucl.user.*;
 
 @RestController
 @RequestMapping("/api/users")
