@@ -5,8 +5,8 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.eucl.dto.MeterRegisterRequest;
+import com.eucl.exception.UserNotFoundException;
 import com.eucl.model.Meter;
 import com.eucl.utils.MeterUtil;
 import com.eucl.model.User;
@@ -28,7 +28,7 @@ public class MeterService {
 
     public String registerMeter(MeterRegisterRequest request) {
         User user = userRepository.findById(request.getUserId())
-                .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElseThrow(() -> new UserNotFoundException("User not found"));
 
         Meter meter = new Meter();
         meter.setMeterId(MeterUtil.generateMeterNumber());
