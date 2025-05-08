@@ -6,12 +6,15 @@ import java.util.List;
 @Entity
 @Table(name = "meters")
 public class Meter {
-    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @Column(length = 6, unique = true)
     private String meterId;
 
     @ManyToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "ownerId", nullable = false)
     private User owner;
 
     @OneToMany(mappedBy = "meter", cascade = CascadeType.ALL)

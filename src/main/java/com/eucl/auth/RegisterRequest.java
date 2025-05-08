@@ -8,15 +8,17 @@ public class RegisterRequest {
     private String password;
     private String phone;
     private Role role;
+    private String nationalId;
 
     public RegisterRequest() {}
 
-    public RegisterRequest(String name, String email, String password, String phone, Role role) {
+    public RegisterRequest(String name, String email, String password, String phone, Role role, String nationalId) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.phone = phone;
         this.role = role;
+        this.nationalId = nationalId;
     }
     public String getName() {
         return name;
@@ -48,6 +50,12 @@ public class RegisterRequest {
     }
     public void setRole(Role role) {
         this.role = role;
+    }
+    public String getNationalId() {
+        return nationalId;
+    }
+    public void setNationalId(String nationalId) {
+        this.nationalId = nationalId;
     }
 
 }

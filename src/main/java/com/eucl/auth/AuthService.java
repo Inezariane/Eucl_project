@@ -3,6 +3,7 @@ package com.eucl.auth;
 import org.springframework.stereotype.Service;
 
 import com.eucl.model.*;
+import com.eucl.utils.UserUtil;
 import com.eucl.repository.UserRepository;
 import com.eucl.security.JwtService;
 
@@ -29,15 +30,17 @@ public class AuthService {
 
     public AuthResponse register(RegisterRequest request) {
         User user = new User();
+        user.setUserId(UserUtil.generateUserId());
         user.setName(request.getName());
         user.setEmail(request.getEmail());
         user.setPassword(passwordEncoder.encode(request.getPassword()));
         user.setPhone(request.getPhone());
         user.setRole(Role.USER);
+        user.setNationalId(request.getNationalId());
         userRepository.save(user);
 
         String jwtToken = jwtService.generateToken(request.getEmail());
-        return new AuthResponse(jwtToken);
+        return new AuthResponse(jwtToken, user.getUserId());
     }
     public AuthResponse login(AuthRequest request){
         authenticationManager.authenticate(
