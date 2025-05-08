@@ -20,6 +20,8 @@ public class Token {
     @Enumerated(EnumType.STRING)
     private TokenStatus tokenStatus;
 
+    private int tokenValueDays;
+
     private LocalDateTime purchasedDate;
 
     private Integer amount;
@@ -30,10 +32,11 @@ public class Token {
 
     public Token() {}
 
-    public Token(String meterNumber, String token, TokenStatus tokenStatus, LocalDateTime purchasedDate, Integer amount) {
+    public Token(String meterNumber, String token, TokenStatus tokenStatus, int tokenValueDays, LocalDateTime purchasedDate, Integer amount) {
         this.meterNumber = meterNumber;
         this.token = token;
         this.tokenStatus = tokenStatus;
+        this.tokenValueDays = tokenValueDays;
         this.purchasedDate = purchasedDate;
         this.amount = amount;
     }
@@ -60,6 +63,12 @@ public class Token {
     }
     public void setTokenStatus(TokenStatus tokenStatus) {
         this.tokenStatus = tokenStatus;
+    }
+    public int getTokenValueDays() {
+        return tokenValueDays;
+    }
+    public void setTokenValueDays(int tokenValueDays) {
+        this.tokenValueDays = tokenValueDays;
     }
     public LocalDateTime getPurchasedDate() {
         return purchasedDate;

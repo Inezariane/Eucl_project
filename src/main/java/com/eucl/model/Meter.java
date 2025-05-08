@@ -6,10 +6,7 @@ import java.util.List;
 @Entity
 @Table(name = "meters")
 public class Meter {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    
     @Column(length = 6, unique = true)
     private String meterId;
 
@@ -27,12 +24,6 @@ public class Meter {
         this.owner = owner;
     }
 
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
     public String getMeterId() {
         return meterId;
     }
