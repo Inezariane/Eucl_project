@@ -13,12 +13,17 @@ public class NotificationService {
     
     @Autowired
     private NotificationRepository notificationRepository;
+
+    @Autowired
+    private EmailService emailService;
     
     public void createNotification(String message, User user) {
         Notification notification = new Notification();
         notification.setMessage(message);
         notification.setUser(user);
         notificationRepository.save(notification);
+
+        emailService.sendSimpleEmail(user.getEmail(), "New Notification", message);
     }
     public List<Notification> getByUserId(Long userId){
         return notificationRepository.findByUserId(userId);
